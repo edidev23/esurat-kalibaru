@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\JenisSuratKeluar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class JenisSuratKeluarController extends Controller
 {
@@ -16,9 +17,26 @@ class JenisSuratKeluarController extends Controller
 
     public function index()
     {
-        $jenissurat = JenisSuratKeluar::all()->sortBy('nama')->sortBy('kode');
+        $penduduk_array = DB::select('select id, nik, nama, jkel from penduduk');
 
-        return view('admin-page/jenis-surat-keluar/view', compact('jenissurat'));
+        $data = array();
+        $i = 0;
+        foreach ($penduduk_array as $p) {
+            $data[$i]['id'] = $p->id;
+            $data[$i]['name'] = $p->nama . ' / ' . $p->nik;
+            $data[$i]['jkel'] = $p->jkel;
+            $i++;
+        }
+        $penduduk = json_encode($data);
+
+        $jenissurat = DB::table('surat_keluar')
+        ->select(DB::raw('count(*) as total_surat'), 'jns_surat_keluar.*')
+        ->join('jns_surat_keluar', 'surat_keluar.jns_surat_keluar_id', '=', 'jns_surat_keluar.id')
+        ->groupBy('surat_keluar.jns_surat_keluar_id')
+        ->orderByDesc('jns_surat_keluar.nama')
+        ->get();
+
+        return view('admin-page/jenis-surat-keluar/view', compact('jenissurat', 'penduduk'));
     }
 
     public function create()

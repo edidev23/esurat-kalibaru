@@ -46,6 +46,13 @@
                             </li>
 
                             <li
+                            class="{{ (request()->is('kades/surat-masuk', 'kades/surat-masuk/*') ? 'active' : '') }}">
+                                <a href="{{ url('kades/surat-masuk') }}"><i class="fa fa-envelope"></i> 
+                                    <span
+                                        class="nav-label">Surat Keluar</span></a>
+                            </li>
+
+                            <li
                                 class="{{ (request()->is('kades/surat-keluar', 'kades/surat-keluar/*') ? 'active' : '') }}">
                                 <a href="{{ url('kades/surat-keluar') }}"><i class="fa fa-envelope"></i> <span
                                         class="nav-label">Reg. Surat keluar</span></a>
@@ -80,6 +87,18 @@
                             </li>
 
                             <li
+                            class="{{ (request()->is('admin/surat-masuk', 'admin/surat-masuk/*') ? 'active' : '') }}">
+                                <a href="{{ url('admin/surat-masuk') }}"><i class="fa fa-envelope"></i> <span
+                                        class="nav-label">Surat Keluar</span></a>
+                            </li>
+
+                            <li
+                            class="{{ (request()->is('admin/jenis-surat-keluar', 'admin/jenis-surat-keluar/*') ? 'active' : '') }}">
+                                <a href="{{ url('admin/jenis-surat-keluar') }}"><i class="fa fa-envelope"></i> <span
+                                        class="nav-label">Pelayanan Surat Desa</span></a>
+                            </li>
+
+                            {{-- <li
                                 class="{{ (request()->is('admin/surat-keluar', 'admin/surat-keluar/*', 'admin/jenis-surat-keluar', 'admin/jenis-surat-keluar/*') ? 'active' : '') }} nav-parent">
                                 <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Surat
                                         Keluar</span></a>
@@ -87,7 +106,7 @@
                                     <li><a href="{{ url('admin/surat-keluar') }}">Surat Keluar</a></li>
                                     <li><a href="{{ url('admin/jenis-surat-keluar') }}">Jenis Surat Keluar</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li
                                 class="{{ (request()->is('admin/profil-desa', 'admin/profil-desa/*') ? 'active' : '') }}">
                                 <a href="{{ url('admin/profil-desa') }}"><i class="fa fa-user"></i> <span

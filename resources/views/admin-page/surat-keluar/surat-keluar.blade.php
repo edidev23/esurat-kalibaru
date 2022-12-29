@@ -130,7 +130,7 @@
                         <button type="submit" name="btn_save" value="save_back" class="btn btn-success">
                             <i class="fa fa-check"></i> Save Sementara
                         </button>
-                        <a href="{{ url('admin/surat-keluar') }}" class="btn btn-danger">
+                        <a href="{{ url('admin/jenis-surat-keluar') }}" class="btn btn-danger">
                             Cancel
                         </a>
                     </div>

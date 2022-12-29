@@ -159,6 +159,9 @@ class SuratKeluarController extends Controller
 
         if ($jenis_surat->template == 'surat-kelahiran') {
 
+            if(!$request->ayah_id || !$request->ibu_id) {
+                return Redirect::back()->withErrors(['msg' => 'The Message']);
+            }
             $detail_ayah = Penduduk::where('id', $request->ayah_id)->first();
             $detail_ibu = Penduduk::where('id', $request->ibu_id)->first();
 

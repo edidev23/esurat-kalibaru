@@ -152,7 +152,7 @@
                     @else
                     <div class="font-18">Kepala Desa {{ $profil_desa->desa }}</div>
 
-                    <div class="text-bold" style="margin-top: 100px; text-decoration: underline">
+                    <div class="text-bold" style="margin-top: 150px; text-decoration: underline">
                         {{ $ttd_pimpinan->name }}</div>
                     @endif
                 </td>

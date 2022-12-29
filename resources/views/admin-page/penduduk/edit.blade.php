@@ -143,14 +143,14 @@
                         <div class="col-lg-4">
                             <div class="form-group @if($errors->has('pekerjaan')) has-error @endif">
                                 <label class="control-label" for="pekerjaan">Pekerjaan</label>
-                                {{-- <input id="pekerjaan" type="text" name="pekerjaan" class="form-control" placeholder="Pekerjaan" value="@if(count($errors) > 0){{old('pekerjaan')}}@endif" /> --}}
-                                <select name="pekerjaan" id="pekerjaan" class="form-control">
+                                <input id="pekerjaan" type="text" name="pekerjaan" class="form-control" placeholder="Pekerjaan" value="@if(count($errors) > 0){{old('pekerjaan')}}@else{{ $penduduk->pekerjaan }}@endif" />
+                                {{-- <select name="pekerjaan" id="pekerjaan" class="form-control">
                                     <option value="">-- Pilih --</option>
                                     @foreach ($pekerjaan as $p)
                                         <option value="{{ $p->nama }}" @if(old('pekerjaan') == $p->nama || $penduduk->pekerjaan == $p->nama) selected @endif>{{ $p->nama }}</option>
                                     @endforeach
                                     
-                                </select>
+                                </select> --}}
         
                                 @if ($errors->has('pekerjaan'))
                                     <span for="pekerjaan" class="help-block">{{ $errors->first('pekerjaan') }}</span>
