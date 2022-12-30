@@ -46,8 +46,8 @@
                             </li>
 
                             <li
-                            class="{{ (request()->is('kades/surat-masuk', 'kades/surat-masuk/*') ? 'active' : '') }}">
-                                <a href="{{ url('kades/surat-masuk') }}"><i class="fa fa-envelope"></i> 
+                            class="{{ (request()->is('kades/surat-keluar-internal', 'kades/surat-keluar-internal/*') ? 'active' : '') }}">
+                                <a href="{{ url('kades/surat-keluar-internal') }}"><i class="fa fa-envelope"></i> 
                                     <span
                                         class="nav-label">Surat Keluar</span></a>
                             </li>
@@ -55,7 +55,7 @@
                             <li
                                 class="{{ (request()->is('kades/surat-keluar', 'kades/surat-keluar/*') ? 'active' : '') }}">
                                 <a href="{{ url('kades/surat-keluar') }}"><i class="fa fa-envelope"></i> <span
-                                        class="nav-label">Reg. Surat keluar</span></a>
+                                        class="nav-label">Pelayanan Surat Desa</span></a>
                             </li>
 
                             @endif
@@ -114,9 +114,9 @@
                             </li>
                             @endif
 
-                            <li>
+                            {{-- <li>
                                 <a href=""><i class="fa fa-sign-out"></i> <span class="nav-label">Logout</span></a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

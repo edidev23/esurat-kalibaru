@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\Kades\HomeKadesController;
 use App\Http\Controllers\Admin\Kades\SuratMasukKadesController;
 use App\Http\Controllers\Admin\Kades\SuratKeluarKadesController;
-use App\Http\Controllers\Admin\SuratKeluarInternalController;
+use App\Http\Controllers\Admin\Kades\SuratKeluarInternalKadesController;
 
 Route::get('/', function () {
     return redirect('admin');
@@ -38,6 +38,7 @@ Route::name('admin.')->prefix('admin')->middleware('auth', 'checkRole:admin,kepa
 Route::name('kades.')->prefix('kades')->middleware('auth', 'checkRole:kepala_desa,sekdes')->group(function () {
     Route::get('/', [HomeKadesController::class, 'index']);
     Route::resource('/surat-masuk', SuratMasukKadesController::class);
+    Route::resource('/surat-keluar-internal', SuratKeluarInternalKadesController::class);
     Route::resource('/surat-keluar', SuratKeluarKadesController::class);
 });
 
