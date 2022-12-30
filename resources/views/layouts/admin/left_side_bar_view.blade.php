@@ -87,8 +87,8 @@
                             </li>
 
                             <li
-                            class="{{ (request()->is('admin/surat-masuk', 'admin/surat-masuk/*') ? 'active' : '') }}">
-                                <a href="{{ url('admin/surat-masuk') }}"><i class="fa fa-envelope"></i> <span
+                            class="{{ (request()->is('admin/surat-keluar-internal', 'admin/surat-keluar-internal/*') ? 'active' : '') }}">
+                                <a href="{{ url('admin/surat-keluar-internal') }}"><i class="fa fa-envelope"></i> <span
                                         class="nav-label">Surat Keluar</span></a>
                             </li>
 

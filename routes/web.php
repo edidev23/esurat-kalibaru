@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\Kades\HomeKadesController;
 use App\Http\Controllers\Admin\Kades\SuratMasukKadesController;
 use App\Http\Controllers\Admin\Kades\SuratKeluarKadesController;
+use App\Http\Controllers\Admin\SuratKeluarInternalController;
 
 Route::get('/', function () {
     return redirect('admin');
@@ -50,6 +51,7 @@ Route::name('admin.')->prefix('admin')->middleware('auth', 'checkRole:admin')->g
     Route::resource('jenis-surat-keluar', JenisSuratKeluarController::class);
     Route::get('jenis-surat-keluar/restore-format/{id}', [JenisSuratKeluarController::class, 'restore_format']);
     Route::resource('surat-masuk', SuratMasukController::class);
+    Route::resource('surat-keluar-internal', SuratKeluarInternalController::class);
     Route::resource('profil-desa', ProfilDesaController::class);
     Route::post('upload-excel', [PendudukController::class, 'uploadExel']);
 
