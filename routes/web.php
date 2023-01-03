@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PendudukController;
 use App\Http\Controllers\Admin\SuratKeluarController;
+use App\Http\Controllers\Admin\SuratKeluarInternalController;
 use App\Http\Controllers\Admin\JenisSuratKeluarController;
 use App\Http\Controllers\Admin\ProfilDesaController;
 use App\Http\Controllers\Admin\SuratMasukController;

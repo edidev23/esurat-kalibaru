@@ -140,10 +140,18 @@
                                     Kawin
                                 </label>
 
-                                <label style="margin-left: 20px">
+                                <br>
+
+                                <label>
                                     <input type="radio" name="status" id="cerai" value="Cerai Mati"
                                         @if(old('status')=='Cerai Mati' ) checked @endif>
                                     Cerai Mati
+                                </label>
+
+                                <label style="margin-left: 20px">
+                                    <input type="radio" name="status" id="cerai" value="Cerai Hidup"
+                                        @if(old('status')=='Cerai Hidup' ) checked @endif>
+                                    Cerai Hidup
                                 </label>
 
                                 @if ($errors->has('status'))
